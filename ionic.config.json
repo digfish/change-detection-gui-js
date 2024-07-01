@@ -1,0 +1,7 @@
+{
+  "name": "change-detection-gui-js",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
