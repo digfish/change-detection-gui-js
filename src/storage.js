@@ -1,11 +1,12 @@
 //const LocalStorage =  (await import( 'node-localstorage')).LocalStorage;
 //const localStorage = (typeof window === 'undefined') ?  LocalStorage('./storage') : window.localStorage;
 let localStorage = null;
- if (typeof window === 'undefined')  {
+/* if (typeof window === 'undefined')  {
     const LocalStorage =  (await import( 'node-localstorage')).LocalStorage;
     
     localStorage = new LocalStorage('./storage');
- } else localStorage = window.localStorage;
+ } else */
+  localStorage = window.localStorage;
  ///import * as storage from 'localStorage';
 //const localStorage = storage.localStorage;
 
