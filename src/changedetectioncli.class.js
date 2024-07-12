@@ -44,9 +44,7 @@ function tests() {
     setItem('API_KEY', '***REMOVED***')
     let baseUrl = getItem('CHANGEDETECTION_BASE_URL');
     console.log(baseUrl);
-    let cli = new ChangeDetectionCli(getItem('CHANGEDETECTION_BASE_URL'), getItem('API_KEY'))
-    cli.info().then(console.log)
-    cli.list().then(console.log)
+    let cli = new ChangeDetectionCli(getItem('CHANGEDETECTION_BASE_URL'), getItem('API_KEY'))  
 }
 
  tests();

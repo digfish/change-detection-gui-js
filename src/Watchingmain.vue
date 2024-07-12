@@ -94,6 +94,28 @@ export default {
 
 </script>
 
+<style>
+#container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+}
+
+ion-title.big {
+    font-size: 2em;
+    display: inline-block
+}
+
+pre {
+    margin: 5px;
+    border-style: dashed;
+    padding-left: 5px;
+    padding-top: 10px;
+    text-wrap: balance;
+}
+
+</style>
+
 <template>
 
     <ion-page>
@@ -103,15 +125,17 @@ export default {
             </ion-toolbar>
         </ion-header>
 
-        <ion-content>
-            <ion-title>
+        <ion-content class="content-inline">
+        <div id="container">
+            <div class="big">
                 Snapshot at
-            </ion-title>
+                <ion-select v-model="selectedTmsmtp">
+                    <ion-select-option v-for="tmstmp in tmstmps" v-bind:value="tmstmp">
+                        {{ toDatetime(tmstmp) }}
+                    </ion-select-option>
+                </ion-select>
+            </div>
 
-            <ion-select v-model="selectedTmsmtp">
-                <ion-select-option v-for="tmstmp in tmstmps" v-bind:value="tmstmp">{{ toDatetime(tmstmp) }}
-                </ion-select-option>
-            </ion-select>
 
             <ion-button v-on:click="previousSnapshot">
                 <ion-icon icon="arrow-back"></ion-icon>
@@ -121,6 +145,7 @@ export default {
                 <ion-icon icon="arrow-forward"></ion-icon>
             </ion-button>
             <pre>{{ selectedSnapshot }}</pre>
+        </div>
         </ion-content>
     </ion-page>
 </template>

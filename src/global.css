@@ -2,3 +2,8 @@ ion-toolbar {
   --background: #3880ff;
   --color: #fff;
 }
+
+ion-content.content-inline {
+  margin-left: 20px;
+  margin-right: 20px;
+}

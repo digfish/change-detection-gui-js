@@ -42,3 +42,8 @@ npm-debug.log*
 */storage/*
 **/scratch/*
 
+
+resources/android/**/*
+package-lock.json
+essays/storage.mjs.off
+storage/*

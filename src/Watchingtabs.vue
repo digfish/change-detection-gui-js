@@ -1,6 +1,6 @@
 <script setup>
 import { IonPage, IonRouterOutlet, IonHeader, 
-    IonToolbar, IonTitle, IonButtons, IonTabBar,
+    IonToolbar, IonTitle, IonButtons, IonTabBar, IonIcon,
     IonBackButton, IonContent, IonTabs, IonLabel, IonTabButton, } from '@ionic/vue'
 import { info, list, watchInfo, watchHistory, historyItem, snapshotsDiff } from './changedetection'
 import { toIsoString } from './helpers'
@@ -68,7 +68,7 @@ export default {
 
     },
 
-    components: { IonPage, IonRouterOutlet, IonHeader, IonTitle, IonContent, IonTabs, IonLabel, IonTabButton }
+    components: { IonPage, IonRouterOutlet, IonHeader, IonIcon, IonTitle, IonContent, IonTabs, IonLabel, IonTabButton }
 }
 
 </script>
@@ -83,20 +83,49 @@ export default {
                 <ion-title>{{title}}</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content> <router-link to="/">Home</router-link>
-        </ion-content>
 
         <ion-tabs>
             <ion-router-outlet>
             </ion-router-outlet>
             <ion-tab-bar slot="bottom">
                 <ion-tab-button v-on:click="gotoTabMain" tab="main">
+                    <ion-icon name="albums-outline"></ion-icon>
                     <ion-label>Main</ion-label>
                 </ion-tab-button>
                 <ion-tab-button v-on:click="gotoTabDetail" tab="detail">
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
                     <ion-label>Detail</ion-label>
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>
     </ion-page>
 </template>
+
+<style scoped>
+    #outlet-wrapper {
+        height: 100%;
+        max-width: 70%;
+    }
+</style>
+
+<style>
+  :root {
+    /**
+     * Setting the variables for DEMO purposes only.
+     * Values will be set automatically when building an iOS or Android app.
+     */
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 20px;
+    --ion-safe-area-left: 20px;
+    --ion-safe-area-right: 20px;
+  }
+</style>
+
+<style scoped>
+  ion-content::part(scroll) {
+    padding-top: var(--ion-safe-area-top, 0);
+    padding-bottom: var(--ion-safe-area-bottom, 0);
+    padding-left: var(--ion-safe-area-left, 0);
+    padding-right: var(--ion-safe-area-right, 0);
+  }
+</style>

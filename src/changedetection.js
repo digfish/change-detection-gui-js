@@ -10,20 +10,22 @@ import { getItem, setItem } from './storage'
 //const API_KEY = import.meta.env.API_KEY ;
 //setItem('CHANGEDETECTION_BASE_URL', 'https://***REMOVED***')
 //setItem('API_KEY', '***REMOVED***')
-const CHANGEDETECTION_BASE_URL = getItem('CHANGEDETECTION_BASE_URL')
-const API_KEY = getItem('API_KEY')
 
 async function baseRequest(urlToken) {
-  let url = `${CHANGEDETECTION_BASE_URL}/api/v1/${urlToken}`
+	const  baseUrl = getItem('CHANGEDETECTION_BASE_URL')
+	const apiKey = getItem('API_KEY')
+
+   //console.log('baseRequest() API_KEY: '+apiKey);
+  let url = `${baseUrl}/api/v1/${urlToken}`
   let resp = await fetch(url, {
     method: 'GET',
     headers: {
-      'x-api-key': API_KEY
+      'x-api-key': apiKey
     }
   })
   if (resp.status != 200) {
-    console.log(`Error: ${resp.status}`)
-    throw new Error(await resp.text())
+    //console.log(`Error: ${resp.status}`) 
+    throw new Error((await resp.text()))
   } else {
     const isJson = resp.headers.get('content-type')?.includes('application/json')
     const data = isJson ? await resp.json() : await resp.text()
@@ -32,11 +34,23 @@ async function baseRequest(urlToken) {
 }
 
 export async function info() {
-  return await baseRequest('systeminfo')
+  let resp =   baseRequest('systeminfo');
+  resp.then((data) => {
+    console.log(data);
+    //return data;
+  }).catch((err) => {
+    throw err;})
+    return resp;
 }
 
-export async function list() {
-  return await baseRequest('watch')
+export async function list()  {
+  let resp =  baseRequest('watch')
+  resp.then((data) => {
+    console.log(data);
+    //return data;
+  }).catch((err) => {
+    throw err;})
+    return resp;
 }
 
 export async function watchInfo(watch_uuid) {

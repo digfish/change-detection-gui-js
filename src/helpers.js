@@ -43,4 +43,8 @@ export async function iconAsBlob(url) {
   return URL.createObjectURL(blob)
 }
 
+export function capitalizeString(string) {
+  return string.replaceAll('_',' ').charAt(0).toUpperCase() + string.slice(1).replaceAll('_',' ')
+}
+
 //console.log(await getFavicon('http://www.cm-ourique.pt'))

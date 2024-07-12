@@ -12,3 +12,6 @@ export default {
   moduleNameMapper,
   moduleFileExtensions,
 };
+
+export const rootDir = './'
+
