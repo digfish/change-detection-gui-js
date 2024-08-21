@@ -20,9 +20,7 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 $RECYCLE.BIN/
 
-*.log
 log.txt
-npm-debug.log*
 
 /.idea
 /.ionic
@@ -48,3 +46,8 @@ package-lock.json
 essays/storage.mjs.off
 storage/*
 *.webm
+/chat.json
+essays/stuff.txt
+..bfg-report/
+
+clean-passwords.bat

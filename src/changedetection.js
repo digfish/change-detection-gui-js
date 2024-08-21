@@ -8,8 +8,6 @@ import { getItem, setItem } from './storage'
 // get the value of the environment variable
 //const CHANGEDETECTION_BASE_URL =  import.meta.env.CHANGEDETECTION_BASE_URL;
 //const API_KEY = import.meta.env.API_KEY ;
-//setItem('CHANGEDETECTION_BASE_URL', 'https://changedetection.digfish.org')
-//setItem('API_KEY', '4b066b1f1e40f05dcaacb7ff14f98678')
 
 async function baseRequest(urlToken) {
 	const  baseUrl = getItem('CHANGEDETECTION_BASE_URL')

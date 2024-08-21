@@ -13,9 +13,10 @@
     "copy-from-nas": "robocopy s:\\ionic-projects\\change-detection-gui-js  . /v /e /xd node_modules /xd android",
     "test": "jest",
     "jasmine": "jasmine",
-    "backup": "cd .. && zip -r vue-essay-1.zip vue-essay-1 -x \"vue-essay-1/node_modules/*\"  ",
+    "backup": "cd .. && 7z a change-detection-gui.zip change-detection-gui-js -xr!change-detection-gui-js/node_modules -xr!change-detection-gui-js/android  ",
     "test:e2e": "cypress run",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "clean": ""
   },
   "dependencies": {
     "@capacitor/android": "6.1.0",
