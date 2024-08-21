@@ -40,8 +40,8 @@ export default ChangeDetectionCli;
 
 // eslint-disable-next-line no-unused-vars
 function tests() {
-    setItem('CHANGEDETECTION_BASE_URL', 'https://***REMOVED***')
-    setItem('API_KEY', '***REMOVED***')
+    setItem('CHANGEDETECTION_BASE_URL', 'https://changedetection.digfish.org')
+    setItem('API_KEY', '4b066b1f1e40f05dcaacb7ff14f98678')
     let baseUrl = getItem('CHANGEDETECTION_BASE_URL');
     console.log(baseUrl);
     let cli = new ChangeDetectionCli(getItem('CHANGEDETECTION_BASE_URL'), getItem('API_KEY'))  

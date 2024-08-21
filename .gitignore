@@ -47,3 +47,4 @@ resources/android/**/*
 package-lock.json
 essays/storage.mjs.off
 storage/*
+*.webm

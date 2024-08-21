@@ -5,8 +5,8 @@ import {describe, it, expect, beforeEach, global} from '@jest/globals'
 
 describe('ChangeDetectionCli', () => {
   let cli
-  const domain = 'https://***REMOVED***' // Replace with your actual domain
-  const apiKey = '***REMOVED***' // Replace with your actual API key
+  const domain = 'https://changedetection.digfish.org' // Replace with your actual domain
+  const apiKey = '4b066b1f1e40f05dcaacb7ff14f98678' // Replace with your actual API key
 
   beforeEach(() => {
     cli = new ChangeDetectionCli(domain, apiKey)

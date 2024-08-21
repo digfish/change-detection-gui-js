@@ -38,11 +38,15 @@ import { info } from './changedetection'
         </div>
         You need to enter your base domain (https://) and your API key.
         <form v-on:submit.prevent="onSubmit">
-          <label for="base">Base Domain</label>
+          <p><label for="base">Base Domain</label>
           <input type="text" id="base" requred v-model="baseDomain" />
+          </p>
+          <p>
           <label for="key">API Key</label>
           <input type="text" id="key" required v-model="apiKey" />
-          <button type="submit">Submit</button>
+        </p>
+        
+          <ion-button type="submit">Submit</ion-button>
         </form>
       </div>
     </ion-content>
@@ -60,6 +64,21 @@ color: red;
 
 #container {
   min-height: 100%;
+}
+label {
+  display:block;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase
+}
+
+form p {
+  padding-bottom: 15px;
+}
+
+input {
+  min-width: 90%;
+  font-size: 1.3em;
 }
 </style>
 
