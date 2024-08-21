@@ -51,3 +51,4 @@ essays/stuff.txt
 ..bfg-report/
 
 clean-passwords.bat
+*.env
